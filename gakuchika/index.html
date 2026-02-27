@@ -149,75 +149,46 @@
         <div class="max-w-3xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-black text-center mb-10">どんな人が参加してる？</h2>
 
-            <!-- ★新規追加：データで見る参加者（インフォグラフィック） -->
-            <div class="mb-12">
+            <!-- データで見る参加者（円グラフ） -->
+            <div class="mb-12 max-w-lg mx-auto">
                 <p class="text-center text-sm font-bold text-primary mb-3">＼ 400名以上のアンケートデータ！ ／</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white border-2 border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-black text-lg text-slate-800 mb-1 text-center">半数以上が「大学1年生」🔰</h3>
+                    <p class="text-xs text-slate-500 text-center mb-6">大学生活の早い段階から挑戦する人が多数！</p>
                     
-                    <!-- 学年データ -->
-                    <div class="bg-white border-2 border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-black text-lg text-slate-800 mb-1 text-center">半数以上が「大学1年生」🔰</h3>
-                        <p class="text-xs text-slate-500 text-center mb-6">大学生活の早い段階から挑戦する人が多数！</p>
+                    <!-- ドーナツグラフと凡例のコンテナ -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+                        <!-- グラフ部分（CSSのconic-gradientで描画） -->
+                        <div class="relative w-40 h-40 rounded-full shadow-sm" style="background: conic-gradient(#0ea5e9 0% 50.7%, #38bdf8 50.7% 78.9%, #7dd3fc 78.9% 93.9%, #cbd5e1 93.9% 100%);">
+                            <!-- 真ん中を白く抜く -->
+                            <div class="absolute inset-0 m-auto w-24 h-24 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
+                                <span class="text-[10px] text-slate-500 font-bold">1年生が</span>
+                                <span class="text-xl font-black text-primary">50.7<span class="text-xs">%</span></span>
+                            </div>
+                        </div>
                         
-                        <!-- 横棒プログレスバー -->
+                        <!-- 凡例部分 -->
                         <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 text-xs font-bold text-slate-600 text-right shrink-0">1年生</div>
-                                <div class="flex-1 h-6 bg-slate-100 rounded-full overflow-hidden relative">
-                                    <div class="bg-primary h-full flex items-center px-3 text-[11px] font-bold text-white absolute left-0 top-0" style="width: 50.7%;">50.7%</div>
-                                </div>
+                            <div class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                                <span class="w-3 h-3 rounded-full bg-[#0ea5e9]"></span> 1年生 (50.7%)
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 text-xs font-bold text-slate-600 text-right shrink-0">2年生</div>
-                                <div class="flex-1 h-6 bg-slate-100 rounded-full overflow-hidden relative">
-                                    <div class="bg-sky-400 h-full flex items-center px-3 text-[11px] font-bold text-white absolute left-0 top-0" style="width: 28.2%;">28.2%</div>
-                                </div>
+                            <div class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                                <span class="w-3 h-3 rounded-full bg-[#38bdf8]"></span> 2年生 (28.2%)
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 text-xs font-bold text-slate-600 text-right shrink-0">3年生</div>
-                                <div class="flex-1 h-6 bg-slate-100 rounded-full overflow-hidden relative">
-                                    <div class="bg-sky-300 h-full flex items-center px-3 text-[11px] font-bold text-slate-800 absolute left-0 top-0" style="width: 15.0%;">15%</div>
-                                </div>
+                            <div class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                                <span class="w-3 h-3 rounded-full bg-[#7dd3fc]"></span> 3年生 (15.0%)
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 text-xs font-bold text-slate-600 text-right shrink-0">4年〜</div>
-                                <div class="flex-1 h-6 bg-slate-100 rounded-full overflow-hidden relative">
-                                    <div class="bg-slate-300 h-full flex items-center px-3 text-[11px] font-bold text-slate-600 absolute left-0 top-0" style="width: 6.1%;">6.1%</div>
-                                </div>
+                            <div class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                                <span class="w-3 h-3 rounded-full bg-[#cbd5e1]"></span> 4年生〜 (6.1%)
                             </div>
                         </div>
                     </div>
-
-                    <!-- 性別データ -->
-                    <div class="bg-white border-2 border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-center">
-                        <h3 class="font-black text-lg text-slate-800 mb-1 text-center">男女比はほぼ「半々」👫</h3>
-                        <p class="text-xs text-slate-500 text-center mb-8">性別問わず、誰でもフラットに参加できる環境です。</p>
-                        
-                        <!-- 帯グラフ -->
-                        <div class="flex justify-center items-end gap-4 mb-2">
-                            <div class="text-center">
-                                <span class="text-4xl block mb-2">👩</span>
-                                <span class="text-rose-500 font-black text-lg">54.4%</span>
-                            </div>
-                            <div class="w-full max-w-[120px] h-4 bg-slate-100 rounded-full flex overflow-hidden mb-2">
-                                <div class="bg-rose-400 h-full" style="width: 54.4%"></div>
-                                <div class="bg-amber-400 h-full" style="width: 1.4%"></div>
-                                <div class="bg-blue-400 h-full" style="width: 44.2%"></div>
-                            </div>
-                            <div class="text-center">
-                                <span class="text-4xl block mb-2">👦</span>
-                                <span class="text-blue-500 font-black text-lg">44.2%</span>
-                            </div>
-                        </div>
-                        <p class="text-[10px] text-slate-400 text-center mt-4">※その他: 1.4% (回答数: 412件)</p>
-                    </div>
-
                 </div>
             </div>
 
             <!-- 既存：こんな学生に向いています -->
             <div class="bg-sky-50 border border-sky-100 rounded-xl p-6 mb-8 relative">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     💡 こんな学生に向いています
                 </div>
                 <ul class="text-sm font-bold text-slate-700 space-y-3 max-w-sm mx-auto mt-4">
@@ -269,29 +240,25 @@
         </div>
     </section>
 
-    <!-- 7. ガクチカリアルの6つの特長（写真＋大きな数字のカード型へ進化） -->
+    <!-- 7. ガクチカリアルの6つの特長（テキスト更新版） -->
     <section class="py-14 px-4 bg-bgGray">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-4xl mx-auto">
             <div class="text-center mb-10">
                 <p class="text-primary font-bold text-sm mb-1">＼ 他の選択肢とココが違う！ ／</p>
                 <h2 class="text-3xl font-black text-slate-800 mb-3">6つの特長</h2>
                 <p class="text-sm text-slate-500">リアルな挑戦を、誰でも始めやすくする設計です。</p>
             </div>
 
-            <!-- スマホでは縦並び、PCでは2列になるグリッド -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
                 <!-- 特長01 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
-                    <!-- 写真エリア（プレースホルダー） -->
                     <div class="h-40 bg-slate-200 relative">
                         <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（電車や交通系の写真）</div>
-                        <!-- 大きな数字 -->
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">01</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">交通費サポートあり</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">交通費の負担を気にせず、行きたい場所へ気軽に挑戦できる環境を作ります。（※募集ごとに支給条件が異なります）</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">交通費サポートつきで参加しやすい</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">参加のハードルになりやすい移動費をサポートします。支給条件や上限はプロジェクトごとに明記されるので、安心して検討できます。</p>
                     </div>
                 </div>
 
@@ -302,44 +269,44 @@
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">02</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">活動証明書発行</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">活動終了後、企業・団体から評価付きの証明書が発行されます。就活の「ガクチカ」としてそのまま活用できます。</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">活動証明書で経験が残る</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">参加した内容を「経験」として残せるよう、活動証明書を発行します。振り返りや次の挑戦にもつながります。</p>
                     </div>
                 </div>
 
                 <!-- 特長03 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
                     <div class="h-40 bg-slate-200 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（スマホと学生証の写真）</div>
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（マイページ・グラフの写真）</div>
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">03</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">学生証確認＆審査済で安心</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">参加者は学生限定。受け入れ側の企業・団体も運営が事前に審査を行っているため、安心して参加できます。</p>
+                        <h3 class="font-bold text-base md:text-lg text-slate-800 mb-2 leading-tight">マイページで活動履歴を一覧化。<br>頑張りが数字で一目瞭然。</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">応募・参加・完了などの履歴がマイページにまとまり、成長の積み上げが見えます。活動回数や時間なども可視化されるので、達成感が続きます。</p>
                     </div>
                 </div>
 
                 <!-- 特長04 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
                     <div class="h-40 bg-slate-200 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（笑顔で作業する初心者の写真）</div>
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（1人で参加している様子の写真）</div>
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">04</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">初心者OK</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">専門的なスキルがなくても大丈夫。「やってみたい」という気持ちだけで飛び込める、参加しやすいプログラムを用意しています。</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">初心者でも安心・一人参加が基本で気軽</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">ほとんどの参加者が一人で参加するので、初めてでも気負わずに挑戦できます。「経験がない」「一人は不安」という人でも始めやすい設計です。</p>
                     </div>
                 </div>
 
                 <!-- 特長05 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
                     <div class="h-40 bg-slate-200 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（私服でフランクに話す写真）</div>
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（スケジュールやスマホ画面の写真）</div>
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">05</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">就活感が強すぎない</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">スーツ必須の堅苦しいインターンではありません。フラットな目線で、社会人と一緒にプロジェクトを進める体験ができます。</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">当日の流れが事前にわかる</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">プロジェクトページに当日の流れや内容が書かれているので、参加前にイメージできます。集合場所や持ち物なども事前に確認でき、当日迷いにくいです。</p>
                     </div>
                 </div>
 
@@ -350,11 +317,10 @@
                         <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">06</div>
                     </div>
                     <div class="p-5 pt-6">
-                        <h3 class="font-bold text-lg text-slate-800 mb-2">興味テーマから探せる</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">「地域活性」「子ども・教育」など、自分の興味のあるテーマと地域を掛け合わせて、やりたいことを見つけられます。</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">興味×空き時間でプロジェクトを選べる</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">「やってみたいテーマ」と「行けるタイミング」から、自分に合うプロジェクトを選べます。迷ったら、気になる分野から探して一歩を決められます。</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -441,13 +407,14 @@
     </section>
 
 
-    <!-- 11. 読み物（活動レポート／不安解消）タイミー風 -->
+    <!-- 11. 読み物（お役立ちガイド） -->
     <section class="py-14 bg-white overflow-hidden">
         <div class="max-w-5xl mx-auto">
             <!-- 見出しエリア -->
             <div class="text-center mb-8 px-4">
                 <span class="bg-slate-800 text-white text-xs font-bold px-4 py-1.5 rounded-full inline-block mb-3">まずはこれをチェック！</span>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900">参加前のお役立ちガイド</h2>
+                <!-- ※必要であれば「ガクチカリアルのお役立ちガイド」などに調整してください -->
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">のお役立ちガイド</h2>
             </div>
 
             <!-- スクロールコンテナ（横にスワイプ可能） -->
@@ -456,12 +423,10 @@
                 <!-- カード1: 1日の流れ -->
                 <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
                     <div class="p-3">
-                        <!-- 画像エリア（後で実際の写真に差し替え可能） -->
                         <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">⏰</div>
                         <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">当日のイメージを掴もう！<br>1日の流れ</h3>
                         <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">初めての参加でも安心。集合から解散まで、実際のスケジュール例を解説します。</p>
                     </div>
-                    <!-- 詳しくみるボタン（白背景） -->
                     <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
                         詳しくみる <span class="text-xs text-slate-400">＞</span>
                     </a>
@@ -503,16 +468,20 @@
                     </a>
                 </div>
 
-                <!-- スクロール右端の余白（最後までスクロールした時に見切れないようにする魔法の透明ブロック） -->
-                <div class="shrink-0 w-4 md:w-8"></div>
-            </div>
+                <!-- ★新規追加：カード5: 活動証明書の発行 -->
+                <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
+                    <div class="p-3">
+                        <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">📜</div>
+                        <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">経験を形に残そう<br>活動証明書はどうやって発行するの？</h3>
+                        <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">参加後にマイページから発行できる活動証明書。受け取り方や就活での活用方法を解説します。</p>
+                    </div>
+                    <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
+                        詳しくみる <span class="text-xs text-slate-400">＞</span>
+                    </a>
+                </div>
 
-            <!-- インジケーター風ドット（装飾） -->
-            <div class="flex justify-center gap-2 mt-4 hidden md:flex">
-                <span class="w-2 h-2 rounded-full bg-slate-800"></span>
-                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                <!-- スクロール右端の余白 -->
+                <div class="shrink-0 w-4 md:w-8"></div>
             </div>
         </div>
     </section>
