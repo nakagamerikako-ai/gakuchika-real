@@ -26,6 +26,9 @@
         /* FAQのアコーディオン用 */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        /* 横スクロールバーを隠す */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-white pb-safe">
@@ -92,14 +95,6 @@
         </div>
     </section>
 
-    <!-- 3. 安心の3点セット（固定バッジ） -->
-    <section class="py-3 bg-slate-800 text-white overflow-hidden">
-        <div class="flex justify-center gap-4 px-4 text-[11px] md:text-sm font-bold whitespace-nowrap">
-            <div class="flex items-center gap-1">🚌 交通費サポートあり</div>
-            <div class="flex items-center gap-1">🆔 応募は学生証確認必須</div>
-            <div class="flex items-center gap-1">🏢 掲載団体は事前審査済</div>
-        </div>
-    </section>
 
     <!-- 4. どんな活動がある？（具体例セクション） -->
     <section id="examples" class="py-12 px-4 bg-bgGray">
@@ -145,21 +140,6 @@
                         <p class="text-[11px] font-bold text-slate-700 bg-slate-50 p-2 rounded">【何をする？】旬の野菜を収穫し、直売所での袋詰めや接客体験をします。</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- 4-2. 近日公開 -->
-            <div class="bg-white border-2 border-primary border-dashed rounded-xl p-6 text-center mb-8">
-                <p class="text-primary font-black mb-4">＼ 以下のカテゴリも近日公開予定！ ／</p>
-                <div class="flex flex-wrap justify-center gap-2 mb-6">
-                    <span class="bg-sky-50 text-slate-700 text-xs px-3 py-1.5 rounded-full font-bold">地域活性・まちづくり</span>
-                    <span class="bg-sky-50 text-slate-700 text-xs px-3 py-1.5 rounded-full font-bold">イベント運営</span>
-                    <span class="bg-sky-50 text-slate-700 text-xs px-3 py-1.5 rounded-full font-bold">環境・自然</span>
-                    <span class="bg-sky-50 text-slate-700 text-xs px-3 py-1.5 rounded-full font-bold">子ども支援・教育</span>
-                    <span class="bg-sky-50 text-slate-700 text-xs px-3 py-1.5 rounded-full font-bold">農業・食</span>
-                </div>
-                <a href="#" class="inline-block bg-line text-white font-bold py-3 px-8 rounded-full shadow hover:bg-green-600 text-sm w-full md:w-auto">
-                    希望のカテゴリが出たらLINEでお知らせ
-                </a>
             </div>
         </div>
     </section>
@@ -391,67 +371,83 @@
         </div>
     </section>
 
-    <!-- 10. 特集（季節・ニーズで刺す） -->
-    <section class="py-12 px-4 bg-bgGray">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-black text-center mb-6">注目の特集</h2>
-            <div class="grid grid-cols-2 gap-3 md:gap-4 mb-6">
-                <div class="bg-gradient-to-r from-pink-400 to-rose-400 rounded-xl p-4 text-white font-bold shadow-sm h-24 flex items-center justify-center text-center">
-                    🌸 春休み特集
-                </div>
-                <div class="bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl p-4 text-white font-bold shadow-sm h-24 flex items-center justify-center text-center">
-                    🔰 初挑戦におすすめ
-                </div>
-                <div class="bg-gradient-to-r from-emerald-400 to-teal-400 rounded-xl p-4 text-white font-bold shadow-sm h-24 flex items-center justify-center text-center">
-                    👯‍♀️ 友だちと参加OK
-                </div>
-                <div class="bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl p-4 text-white font-bold shadow-sm h-24 flex items-center justify-center text-center">
-                    🚃 日帰り関東エリア
-                </div>
+
+    <!-- 11. 読み物（活動レポート／不安解消）タイミー風 -->
+    <section class="py-14 bg-white overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+            <!-- 見出しエリア -->
+            <div class="text-center mb-8 px-4">
+                <span class="bg-slate-800 text-white text-xs font-bold px-4 py-1.5 rounded-full inline-block mb-3">まずはこれをチェック！</span>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">参加前のお役立ちガイド</h2>
             </div>
-            <div class="text-center">
-                <a href="#" class="inline-block border-2 border-line text-line font-bold py-2 px-6 rounded-full bg-white text-sm hover:bg-green-50">特集に該当する募集が出たらLINEで通知</a>
+
+            <!-- スクロールコンテナ（横にスワイプ可能） -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 px-4 pb-4">
+                
+                <!-- カード1: 1日の流れ -->
+                <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
+                    <div class="p-3">
+                        <!-- 画像エリア（後で実際の写真に差し替え可能） -->
+                        <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">⏰</div>
+                        <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">当日のイメージを掴もう！<br>1日の流れ</h3>
+                        <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">初めての参加でも安心。集合から解散まで、実際のスケジュール例を解説します。</p>
+                    </div>
+                    <!-- 詳しくみるボタン（白背景） -->
+                    <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
+                        詳しくみる <span class="text-xs text-slate-400">＞</span>
+                    </a>
+                </div>
+
+                <!-- カード2: 持ち物・服装 -->
+                <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
+                    <div class="p-3">
+                        <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">🎒</div>
+                        <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">何を着ていけばいい？<br>持ち物・服装ガイド</h3>
+                        <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">スーツは不要！動きやすい服装のポイントや、基本の持ち物をまとめました。</p>
+                    </div>
+                    <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
+                        詳しくみる <span class="text-xs text-slate-400">＞</span>
+                    </a>
+                </div>
+
+                <!-- カード3: 初参加の不安あるある -->
+                <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
+                    <div class="p-3">
+                        <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">🤔</div>
+                        <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">みんな最初は緊張します<br>初参加の不安あるある</h3>
+                        <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">「1人でも浮かない？」「うまく話せるか不安…」参加前のよくある疑問にお答えします。</p>
+                    </div>
+                    <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
+                        詳しくみる <span class="text-xs text-slate-400">＞</span>
+                    </a>
+                </div>
+
+                <!-- カード4: 潜入レポート -->
+                <div class="snap-center shrink-0 w-[280px] bg-sky-50 rounded-2xl border-4 border-primary flex flex-col justify-between overflow-hidden shadow-sm relative transition-transform transform hover:-translate-y-1">
+                    <div class="p-3">
+                        <div class="bg-white h-36 w-full rounded-xl mb-3 flex items-center justify-center text-5xl shadow-sm border border-slate-100">📝</div>
+                        <h3 class="font-bold text-base text-slate-800 mb-1 leading-tight">現場のリアルな声をお届け<br>潜入レポート（Note）</h3>
+                        <p class="text-[11px] text-slate-600 line-clamp-2 mt-2">実際にガクチカリアルに参加した学生の体験談！現場の雰囲気がよくわかります。</p>
+                    </div>
+                    <a href="#" class="bg-white py-3 text-center text-sm font-bold text-slate-700 block mt-auto hover:text-primary transition-colors">
+                        詳しくみる <span class="text-xs text-slate-400">＞</span>
+                    </a>
+                </div>
+
+                <!-- スクロール右端の余白（最後までスクロールした時に見切れないようにする魔法の透明ブロック） -->
+                <div class="shrink-0 w-4 md:w-8"></div>
+            </div>
+
+            <!-- インジケーター風ドット（装飾） -->
+            <div class="flex justify-center gap-2 mt-4 hidden md:flex">
+                <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
         </div>
     </section>
 
-    <!-- 11. 読み物（活動レポート／不安解消） -->
-    <section class="py-12 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-black text-center mb-8">参加前の不安を解消！</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="#" class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:bg-slate-50">
-                    <div class="text-3xl">⏰</div>
-                    <div><h3 class="font-bold text-slate-800">1日の流れ</h3><p class="text-xs text-slate-500">当日のイメージを掴もう</p></div>
-                </a>
-                <a href="#" class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:bg-slate-50">
-                    <div class="text-3xl">🎒</div>
-                    <div><h3 class="font-bold text-slate-800">持ち物・服装</h3><p class="text-xs text-slate-500">何を着ていけばいい？</p></div>
-                </a>
-                <a href="#" class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:bg-slate-50">
-                    <div class="text-3xl">🤔</div>
-                    <div><h3 class="font-bold text-slate-800">初参加の不安あるある</h3><p class="text-xs text-slate-500">みんな最初は緊張します</p></div>
-                </a>
-                <a href="#" class="flex items-center gap-4 p-4 border border-slate-200 rounded-xl hover:bg-slate-50">
-                    <div class="text-3xl">📝</div>
-                    <div><h3 class="font-bold text-slate-800">活動レポート</h3><p class="text-xs text-slate-500">Noteでリアルな声をチェック</p></div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 12. 安心して参加できる理由（安全性・ルール） -->
-    <section class="py-12 px-4 bg-slate-100">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-black text-center mb-6">安心して参加できる理由</h2>
-            <ul class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4 text-sm text-slate-700">
-                <li class="flex gap-3"><span class="text-primary font-bold">1.</span> <div><strong>応募には学生証確認が必要</strong><br><span class="text-xs text-slate-500">確認できないと応募不可の仕組みです。</span></div></li>
-                <li class="flex gap-3"><span class="text-primary font-bold">2.</span> <div><strong>掲載団体は事前審査</strong><br><span class="text-xs text-slate-500">運営局が審査を通過した企業・団体のみ掲載しています。</span></div></li>
-                <li class="flex gap-3"><span class="text-primary font-bold">3.</span> <div><strong>禁止事項／ガイドラインの徹底</strong><br><span class="text-xs text-slate-500">双方が気持ちよく活動できるルールを設けています。</span></div></li>
-                <li class="flex gap-3"><span class="text-primary font-bold">4.</span> <div><strong>困ったときの連絡導線</strong><br><span class="text-xs text-slate-500">お問い合わせ窓口を設置し、サポート体制を整えています。</span></div></li>
-            </ul>
-        </div>
-    </section>
 
     <!-- 13. FAQ（よくある質問） -->
     <section id="faq" class="py-12 px-4 bg-white">
