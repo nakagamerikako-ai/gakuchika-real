@@ -202,57 +202,114 @@
         </div>
     </section>
 
-    <!-- 6. ガクチカリアルとは（ABOUT図＋一文） -->
-    <section class="py-12 px-4 bg-primary text-white text-center">
-        <div class="max-w-2xl mx-auto">
+    <!-- 6. ガクチカリアルとは（画像配置版） -->
+    <section class="py-12 px-4 bg-slate-900 text-white text-center">
+        <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-black mb-6">ガクチカリアルとは？</h2>
             
-            <!-- ABOUT図プレースホルダー -->
-            <div class="bg-white/10 border border-white/30 rounded-xl p-6 mb-6 h-40 flex items-center justify-center">
-                <p class="text-sm font-bold">（学生 ⇄ ガクチカリアル ⇄ 企業・団体の図解画像を配置）</p>
-            </div>
-
-            <p class="text-lg md:text-xl font-bold leading-relaxed">
+            <p class="text-base md:text-lg font-bold leading-relaxed mb-8">
                 バイトでも、就活インターンでもない。<br>
-                社会の現場で挑戦して、<span class="text-yellow-300">経験として残す</span>。
+                社会の現場で挑戦して、<span class="text-yellow-400">経験として残す</span>。
             </p>
+
+            <!-- いただいた図解画像を配置 -->
+            <figure class="bg-white rounded-2xl p-2 md:p-6 shadow-xl mb-6">
+                <!-- ※ src="画像のパス" にご自身の画像をアップロードして差し替えてください -->
+                <img src="https://placehold.co/800x400/f8fafc/334155?text=ガクチカリアル図解画像" alt="ガクチカリアルの仕組み" class="w-full h-auto rounded-xl">
+            </figure>
         </div>
     </section>
 
-    <!-- 7. ガクチカリアルの6つの特長 -->
-    <section class="py-12 px-4 bg-bgGray">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-black text-center mb-2">ガクチカリアルの6つの特長</h2>
-            <p class="text-sm text-center text-slate-500 mb-8">リアルな挑戦を、誰でも始めやすくする設計です。</p>
+    <!-- 7. ガクチカリアルの6つの特長（写真＋大きな数字のカード型へ進化） -->
+    <section class="py-14 px-4 bg-bgGray">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <p class="text-primary font-bold text-sm mb-1">＼ 他の選択肢とココが違う！ ／</p>
+                <h2 class="text-3xl font-black text-slate-800 mb-3">6つの特長</h2>
+                <p class="text-sm text-slate-500">リアルな挑戦を、誰でも始めやすくする設計です。</p>
+            </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">🚌</div>
-                    <h3 class="font-bold text-sm text-slate-800">交通費サポートあり</h3>
+            <!-- スマホでは縦並び、PCでは2列になるグリッド -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- 特長01 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <!-- 写真エリア（プレースホルダー） -->
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（電車や交通系の写真）</div>
+                        <!-- 大きな数字 -->
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">01</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">交通費サポートあり</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">交通費の負担を気にせず、行きたい場所へ気軽に挑戦できる環境を作ります。（※募集ごとに支給条件が異なります）</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">📜</div>
-                    <h3 class="font-bold text-sm text-slate-800">活動証明書発行</h3>
+
+                <!-- 特長02 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（証明書を持つ学生の写真）</div>
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">02</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">活動証明書発行</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">活動終了後、企業・団体から評価付きの証明書が発行されます。就活の「ガクチカ」としてそのまま活用できます。</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">🛡</div>
-                    <h3 class="font-bold text-sm text-slate-800">学生証確認＆審査済で安心</h3>
+
+                <!-- 特長03 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（スマホと学生証の写真）</div>
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">03</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">学生証確認＆審査済で安心</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">参加者は学生限定。受け入れ側の企業・団体も運営が事前に審査を行っているため、安心して参加できます。</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">🔰</div>
-                    <h3 class="font-bold text-sm text-slate-800">初心者OK</h3>
+
+                <!-- 特長04 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（笑顔で作業する初心者の写真）</div>
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">04</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">初心者OK</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">専門的なスキルがなくても大丈夫。「やってみたい」という気持ちだけで飛び込める、参加しやすいプログラムを用意しています。</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">🤝</div>
-                    <h3 class="font-bold text-sm text-slate-800">就活感が強すぎない</h3>
+
+                <!-- 特長05 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（私服でフランクに話す写真）</div>
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">05</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">就活感が強すぎない</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">スーツ必須の堅苦しいインターンではありません。フラットな目線で、社会人と一緒にプロジェクトを進める体験ができます。</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-slate-100">
-                    <div class="text-3xl mb-2">🔍</div>
-                    <h3 class="font-bold text-sm text-slate-800">興味テーマから探せる</h3>
+
+                <!-- 特長06 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group">
+                    <div class="h-40 bg-slate-200 relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm">（地域や自然の中での写真）</div>
+                        <div class="absolute -bottom-4 left-4 bg-primary text-white font-black italic text-2xl w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-sm z-10">06</div>
+                    </div>
+                    <div class="p-5 pt-6">
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">興味テーマから探せる</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">「地域活性」「子ども・教育」など、自分の興味のあるテーマと地域を掛け合わせて、やりたいことを見つけられます。</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- 8. 使い方（4ステップ） -->
     <section id="howto" class="py-12 px-4 bg-white">
